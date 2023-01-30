@@ -1,0 +1,5 @@
+basedir = "/g/steinmetz/project/leonie_crispr/03_data/01_heartproject/outdir_wgs_analysis"
+outdir = "/g/steinmetz/project/leonie_crispr/03_data/01_heartproject/outdir_wgs_analysis/plots"
+tissue_specdir = "/g/steinmetz/project/leonie_crispr/03_data/01_heartproject/outdir_wgs_analysis/tissue_spec_vars"
+annotation_dir = "/g/steinmetz/project/leonie_crispr/03_data/01_heartproject/outdir_wgs_analysis/annovar_anno/density_filter"
+reference_seq = "/g/steinmetz/project/leonie_crispr/05_publish/00_wgs_code/wgs_variant_analysis_RBM20/variant_calling/inputs/fasta/mm10_AAV.fa"
