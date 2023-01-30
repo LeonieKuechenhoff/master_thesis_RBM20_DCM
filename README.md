@@ -3,7 +3,7 @@ This repository contains all code that was written and used for the master thesi
 
 ## DNA
 
-### 1. /variant_calling
+### 1. ./DNA/variant_calling
 Pre-processing of the raw fastq files into called variants (.vcf).  
 #### Steps:
 ##### 1. Install and activate conda environment
@@ -14,7 +14,7 @@ conda activate ./envs/smake
 ##### 3. Run snakemake
 snakemake --profile ./profile  
 
-### 2. /variantfile_preparation
+### 2. ./DNA/variantfile_preparation
 Steps following variant calling. Includes snakemake workflow to normalize, filter, and merge vcf files from differnt tissues and variant callers into one txt file. Can be run from the same environment as the variant calling part. Therefore, call:   
 conda activate ./envs/smake
 
@@ -33,7 +33,7 @@ Script to perform quality filtering and save filtered variants
  - table_annovar.pl  
 Script to add genome annotation to variants.  
 
-### 3. /variant_analysis
+### 3. ./DNA/variant_analysis
 Analysis of serveral aspects of output files from step two.
 config.py - directory settings for import statements. Most import files are created in step 2.  
  - variant_caller_venn.ipynb 
@@ -57,7 +57,7 @@ config.py - directory settings for import statements. Most import files are crea
     returns number of mismatches of best match.
 
 ## RNA
-### 1. ./calling_prep
+### 1. ./RNA/calling_prep
 Pre-processing of the raw fastq files into variant files (.vcf). Also includes some steps following variant calling, such as filtering, normalization and merging them into a common txt file.
 Can be run from the same environment as the DNA variant calling part. However certain rules of the snakemake pipeline require python 2.7, which is run from a separate environment. 
 ##### 1. Install python 2.7 conda environment. 
@@ -70,7 +70,7 @@ snakemake -s snakefile --profile profile --use-conda --config mutation=p635l
 If all samples with the R636Q mutation should be run, call:  
 snakemake -s snakefile --profile profile --use-conda --config mutation=r636q  
 
-### analysis
+### 2. ./RNA/analysis
 This folder cotains all costum made scripts to analyze variants.
 It has the following files:
 
@@ -78,10 +78,10 @@ It has the following files:
 
 - config.py   
 Paths that are used several times in scripts. Are imported at start of most scripts
-- config.sh 
+- config.sh   
 Paths that are used several times in bash scripts.  
 
-- tissue_spec_list.ipynb 
+- tissue_spec_list.ipynb  
 Write one list per tissue of tissue specific variants (with anntation in which other samples these variant occur)
 
 - filter_mgp_variants.ipynb  
@@ -105,7 +105,7 @@ Calculate fraction of SNP per sample and categorize into type of SNP
  - bystander_edits.ipynb  
  Search for bystander edits (edits in gRNA binding region)
 
- - bystander_edits_DNA.ipynb 
+ - bystander_edits_DNA.ipynb   
  Search for bystander edits (edits in gRNA binding region) but with DNA data  
 
 - variant_sourrounding.ipynb  
