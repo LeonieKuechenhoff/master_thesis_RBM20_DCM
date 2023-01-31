@@ -13,6 +13,7 @@ conda activate ./envs/smake
 ./variant_calling/RunThisFirst.sh
 ##### 3. Run snakemake
 snakemake --profile ./profile
+Credit: Shengdi Li
 
 ### 2. ./DNA/variantfile_preparation
 Steps following variant calling. Includes snakemake workflow to normalize, filter, and merge vcf files from differnt tissues and variant callers into one txt file. Can be run from the same environment as the variant calling part. Therefore, call:   
