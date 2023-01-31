@@ -12,7 +12,7 @@ conda activate ./envs/smake
 ##### 2. Prepare input and configuration files
 ./variant_calling/RunThisFirst.sh
 ##### 3. Run snakemake
-snakemake --profile ./profile  
+snakemake --profile ./profile
 
 ### 2. ./DNA/variantfile_preparation
 Steps following variant calling. Includes snakemake workflow to normalize, filter, and merge vcf files from differnt tissues and variant callers into one txt file. Can be run from the same environment as the variant calling part. Therefore, call:   
@@ -36,7 +36,7 @@ Script to add genome annotation to variants.
 ### 3. ./DNA/variant_analysis
 Analysis of serveral aspects of output files from step two.
 config.py - directory settings for import statements. Most import files are created in step 2.  
- - variant_caller_venn.ipynb 
+ - variant_caller_venn.ipynb   
     Plot venn diagrams of variants called by different variant callers.  
  - tissue_spec_list.ipynb  
     Write one list per tissue of tissue specific variants. Output needed for AF.ipynb & variant_surrounding.ipynb  
@@ -45,7 +45,7 @@ config.py - directory settings for import statements. Most import files are crea
     Plot allele frequency of A to G mutations  
     Plot allele frequency of on-target edits   
  - annotation.ipynb    
-    Plot how variants are annotated (intron vs. exon etc.), caluclate fraction per category, sample and tissue.  
+    Plot how variants are annotated (intron vs. exon etc.), calculate fraction per category, sample and tissue.  
  - SNP_type.ipynb  
     Calculate fraction of SNP per sample and tissue and categorize into type of SNP, plot results.  
  - variant_surrounding.ipynb    
@@ -59,7 +59,7 @@ config.py - directory settings for import statements. Most import files are crea
 ## RNA
 ### 1. ./RNA/calling_prep
 Pre-processing of the raw fastq files into variant files (.vcf). Also includes some steps following variant calling, such as filtering, normalization and merging them into a common txt file.
-Can be run from the same environment as the DNA variant calling part. However certain rules of the snakemake pipeline require python 2.7, which is run from a separate environment. 
+Can be run from the same environment as the DNA variant calling part. However, certain rules of the snakemake pipeline require python 2.7, which is run from a separate environment. 
 ##### 1. Install python 2.7 conda environment. 
 mamba env create -p ./env/smakep27 -f ./env/env_p27.yml  
 The pipeline is run from the same evironment as the DNA pipeline. The p27 environment will be called withing the snakemake pipeline. Therefore, run:  
@@ -77,18 +77,18 @@ It has the following files:
 #### Python scripts and jupyter notebooks
 
 - config.py   
-Paths that are used several times in scripts. Are imported at start of most scripts
+Paths that are used several times in scripts. They are imported at start of most scripts
 - config.sh   
 Paths that are used several times in bash scripts.  
 
 - tissue_spec_list.ipynb  
-Write one list per tissue of tissue specific variants (with anntation in which other samples these variant occur)
+Write one list per tissue of tissue specific variants (with annotation in which other samples these variant occur)
 
 - filter_mgp_variants.ipynb  
 Filter mgp db entries based on their annotations. Variants of interest are only protein coding variants.
 - overlap_callers.ipynb  
-Compare outputs of 6 different varaint callers. Determine count of called variants, overlap with protein coding known variants (extracted with script above)
-an overlap with each other
+Compare outputs of 6 different variant callers. Determine count of called variants, overlap with protein coding known variants (extracted with script above)
+and overlap with each other
 
 - variant_caller_venn_HC_PL_ST.ipynb  
 Script to plot venn diagrams for variants called by HC, PL and ST
@@ -122,7 +122,20 @@ Import reads exported with reditools in all potential off-target sites (found by
 - compare_cov.ipynb  
 Script to compare coverge across samples
 
+-cass9_expr.ipynb
+Script to compare nCas9 expression (requires cas_expr_start.sh to run first)
 
+- compare_cov_allipynb
+Script to compare genome coverage. 
+
+ - count_tissuespec_vartypes.ipynb
+Script to compare variantion types within tissue specifc variants
+
+- signif_testing.ipynb
+Script to test significance of AG variant proportion
+
+ - input.txt / input2.txt   
+Txt files that are used for bash_scripts/offinder.sh and contain the sgRNA + PAM sequences
 
 
 #### Bash scripts
@@ -151,3 +164,17 @@ script to run reditools on potential off target positions with DNA data
 a) reditools_start.sh  
 b) reditools.sh  
 script to run reditools on area around target-site with RNA data  
+
+
+a) cas_expr_start.sh
+b) cas_expr.sh
+Evaluate nCas9 read coverage on RNA-seq data
+
+a) cas_expr_start_DNA
+- signif_testing.ipynb.sh
+b) cas_expr_DNA.sh
+Evaluate nCas9 read coverage on WGS data
+
+
+readcount.sh
+Script to run reditools on area around target-site with RNA data
