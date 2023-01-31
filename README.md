@@ -171,11 +171,11 @@ a) cas_expr_start.sh
 b) cas_expr.sh
 Evaluate nCas9 read coverage on RNA-seq data
 
-a) cas_expr_start_DNA
-- signif_testing.ipynb.sh
-b) cas_expr_DNA.sh
-Evaluate nCas9 read coverage on WGS data
+a) cas_expr_start_DNA  
+signif_testing.ipynb.sh  
+b) cas_expr_DNA.sh  
+Evaluate nCas9 read coverage on WGS data  
 
 
-readcount.sh
-Script to run reditools on area around target-site with RNA data
+readcount.sh  
+Script to run reditools on area around target-site with RNA data  
