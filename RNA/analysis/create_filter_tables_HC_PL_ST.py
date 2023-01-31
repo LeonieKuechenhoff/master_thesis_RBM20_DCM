@@ -2,8 +2,6 @@
 # Date: Sep 19th, 2022
 # Script to save filtered variants after quality filtering steps
 
-
-from doctest import OutputChecker
 import numpy as np
 import pandas as pd
 import argparse
@@ -289,8 +287,3 @@ if __name__ == '__main__':
     #print(len(args.known))
     main(**vars(args))
 
-#python create_filter_tables_HC_PL_ST.py --names HL029_pbs_R HL033_nrch_R HL011_pbs HL012_nrch HL013_nrch HL014_nrch HL279_spry HL321_pbs HL333_pbs HL450_spry HL283_spry HL028_pbs_R HL030_nrch_R HL032_pbs_R HL036_nrch_R --input /g/steinmetz/project/leonie_crispr/03_data/02_rnaseq/snakemake/variant_caller_out/vartest/txt_files --output /g/steinmetz/project/leonie_crispr/03_data/02_rnaseq/snakemake/filtered_tables
-
-
-
-#python create_filter_tables_HC_PL_ST.py --names HL030_nrch_R HL032_pbs_R --input /g/steinmetz/project/leonie_crispr/03_data/02_rnaseq/snakemake/variant_caller_out/vartest/txt_files --output /g/steinmetz/project/leonie_crispr/03_data/02_rnaseq/snakemake/filtered_tables

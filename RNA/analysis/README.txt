@@ -74,3 +74,6 @@ script to run reditools on potential off target positions with DNA data
 a) reditools_start.sh
 b) reditools.sh
 script to run reditools on area around target-site with RNA data
+
+readcount.sh  
+Script to give read count of primary aligned mapped reads per sample
