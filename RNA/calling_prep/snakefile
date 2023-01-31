@@ -521,5 +521,5 @@ rule create_filter_tables:
         names = expand('HL{mouse}', mouse = MOUSE)
     shell:
         '''
-        python3 {params.helper_scripts}/create_filter_tables_HC_PL_ST.py --names {params.names} --input {params.inputdir} --output filtered_tables
+        python3 {params.helper_scripts}/create_filter_tables_HC_PL_ST.py --names {params.names} --input {params.inputdir} --output filtered_tables --dbsnp ../../DNA/variantfile_preparation/known_variants_vcfs/normalized/sorted/dbsnp.txt --mgp ../../DNA/variantfile_preparation/known_variants_vcfs/normalized/sorted/mgp.txt
         '''
